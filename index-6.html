@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#07111f">
+<title>SportZone ישראל</title>
+<style>
+:root{--bg:#07111f;--panel:#101d30;--panel2:#15253b;--text:#f4f7fb;--muted:#91a3bb;--green:#51e3a4;--line:#24364d;--gold:#ffc857}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#10233b 0%,var(--bg) 55%);color:var(--text);font-family:Arial,"Noto Sans Hebrew",sans-serif}
+header{padding:22px 18px 12px;position:sticky;top:0;z-index:4;background:#07111fee;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:12px}.logo{font-size:31px;background:#173b39;border-radius:14px;padding:8px}.brand h1{font-size:22px;margin:0}.brand p{color:var(--muted);font-size:12px;margin:4px 0 0}
+.status{margin-right:auto;font-size:11px;color:var(--green);border:1px solid #2c6557;border-radius:20px;padding:6px 9px}
+nav{display:flex;gap:8px;overflow-x:auto;padding:12px 0 0;scrollbar-width:none}nav button{white-space:nowrap;background:transparent;border:1px solid var(--line);color:var(--muted);padding:10px 14px;border-radius:12px;font-weight:bold}nav button.active{background:var(--green);border-color:var(--green);color:#07111f}
+main{max-width:780px;margin:auto;padding:18px 14px 95px}.headline{display:flex;align-items:end;justify-content:space-between;gap:10px;margin:4px 2px 15px}.headline h2{font-size:23px;margin:0 0 5px}.headline p{font-size:13px;color:var(--muted);margin:0}.filter{background:var(--panel);border:1px solid var(--line);color:var(--text);padding:9px;border-radius:10px}
+.date-label{color:var(--muted);font-size:12px;margin:22px 4px 9px;font-weight:bold}
+.match{background:linear-gradient(145deg,var(--panel),#0c1929);border:1px solid var(--line);border-radius:17px;padding:15px;margin-bottom:10px;cursor:pointer;transition:.2s}.match:active{transform:scale(.99)}.matchtop{display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:12px;margin-bottom:15px}.league{display:flex;gap:6px;align-items:center}.dot{width:7px;height:7px;background:var(--green);border-radius:50%}.teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px}.team{display:flex;align-items:center;gap:9px;font-weight:bold;font-size:14px}.team:last-child{justify-content:flex-start}.crest{width:35px;height:35px;border-radius:12px;background:var(--panel2);display:grid;place-items:center;font-size:20px}.score{text-align:center;font-weight:900;font-size:20px;min-width:64px}.score small{display:block;font-size:10px;color:var(--muted);font-weight:normal;margin-top:4px}.tag{color:var(--green);font-size:11px}.matchbottom{border-top:1px solid var(--line);margin-top:14px;padding-top:11px;display:flex;justify-content:space-between;color:var(--muted);font-size:12px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.club{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:17px;min-height:130px;cursor:pointer}.club .crest{width:45px;height:45px;font-size:25px;margin-bottom:10px}.club b{display:block}.club small{display:block;color:var(--muted);margin-top:5px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px}.panel h3{margin:0 0 13px}.muted{color:var(--muted)}.newsitem{padding:13px 0;border-bottom:1px solid var(--line)}.newsitem:last-child{border:0}.newsitem p{margin:7px 0 0;color:var(--muted);font-size:13px;line-height:1.5}
+table{width:100%;border-collapse:collapse;font-size:12px}th,td{text-align:center;padding:11px 5px;border-bottom:1px solid var(--line)}th{color:var(--muted);font-weight:normal}td:first-child,th:first-child{text-align:right}tr.mine{color:var(--green);font-weight:bold}
+.pill{display:inline-block;border:1px solid var(--line);border-radius:30px;padding:7px 10px;color:var(--muted);font-size:12px;margin:0 0 10px}
+footer{position:fixed;bottom:0;left:0;right:0;background:#07111ff2;border-top:1px solid var(--line);padding:12px;text-align:center;font-size:11px;color:var(--muted);backdrop-filter:blur(10px)}
+.loader{position:fixed;inset:0;background:#07111f;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:10;animation:hide .6s ease 2s forwards}.loader .ball{font-size:45px;animation:bounce .55s ease-in-out infinite alternate}.loader p{color:var(--muted);font-size:13px}@keyframes bounce{from{transform:translateX(-65px) rotate(-30deg)}to{transform:translateX(65px) rotate(30deg)}}@keyframes hide{to{opacity:0;visibility:hidden;pointer-events:none}}
+button,a{cursor:pointer}a{color:var(--green)}.back{background:transparent;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:9px 12px;margin-bottom:14px}
+@media(min-width:600px){main{padding-top:25px}.grid{grid-template-columns:repeat(4,1fr)}.team{font-size:16px}.match{padding:18px}}
+</style></head>
+<body>
+<div class="loader"><div class="ball">⚽</div><h2>SportZone ישראל</h2><p>מכינים את המגרש...</p></div>
+<header><div class="brand"><div class="logo">⚽</div><div><h1>SportZone <span style="color:var(--green)">ישראל</span></h1><p>כל המשחקים. כל הקבוצות. במקום אחד.</p></div><span class="status">● נתונים מעודכנים חלקית</span></div>
+<nav id="nav"><button class="active" data-page="games">משחקים</button><button data-page="news">חדשות</button><button data-page="teams">הקבוצות שלי</button><button data-page="tables">טבלאות</button></nav></header>
+<main id="app"></main><footer>גרסת אב־טיפוס • הטבלאות והתוצאות כאן מעודכנות ידנית ואינן מתעדכנות אוטומטית</footer>
+<script>
+const teams=[
+{id:'real',name:'ריאל מדריד',sport:'כדורגל',league:'הליגה הספרדית',icon:'⚪',color:'#e9edf5',players:['טיבו קורטואה','דני קרבחאל','אנטוניו רודיגר','אורליאן טשואמני','ג׳וד בלינגהאם','ויניסיוס ג׳וניור','קיליאן אמבפה']},
+{id:'haifa',name:'מכבי חיפה',sport:'כדורגל',league:'ליגת העל בישראל',icon:'🟢',players:['שריף כיוף','שון גולדברג','עלי מוחמד','מחמוד ג׳אבר','דין דוד']},
+{id:'israel',name:'נבחרת ישראל',sport:'כדורגל',league:'נבחרות לאומיות',icon:'🇮🇱',players:['דניאל פרץ','רז שלמה','דור פרץ','מנור סולומון','אוסקר גלוך']},
+{id:'essendon',name:'Essendon Bombers',sport:'AFL',league:'Australian Football League',icon:'🔴',players:['סגל AFL — יש לחבר מקור נתונים עדכני']}
+];
+const matches=[
+{date:'2026-10-12',time:'13:30',league:'ליגת העל בישראל',home:'הפועל ירושלים',away:'מכבי חיפה',hi:'🔴',ai:'🟢',state:'עתידי',sport:'כדורגל'},
+{date:'2026-10-14',time:'22:00',league:'ליגת האלופות',home:'רומא',away:'ריאל מדריד',hi:'🟠🔴',ai:'⚪',state:'עתידי',sport:'כדורגל'},
+{date:'2026-10-18',time:'22:00',league:'הליגה הספרדית',home:'ריאל מדריד',away:'סביליה',hi:'⚪',ai:'🔴⚪',state:'עתידי',sport:'כדורגל'},
+{date:'2026-11-14',time:'21:45',league:'ליגת האומות',home:'קוסובו',away:'נבחרת ישראל',hi:'🇽🇰',ai:'🇮🇱',state:'עתידי',sport:'כדורגל'},
+
+{date:'2026-10-10',time:'22:00',league:'הליגה הספרדית',home:'ריאל מדריד',away:'ויאריאל',hi:'⚪',ai:'🟡',state:'הסתיים',score:'1 : 0',sport:'כדורגל'},
+{date:'2026-09-19',time:'20:00',league:'ליגת העל בישראל',home:'מכבי חיפה',away:'עירוני טבריה',hi:'🟢',ai:'🔵',state:'הסתיים',score:'3 : 2',sport:'כדורגל'},
+{date:'2026-09-20',time:'17:15',league:'הליגה הספרדית',home:'אתלטיקו מדריד',away:'ריאל מדריד',hi:'🔴⚪',ai:'⚪',state:'הסתיים',score:'2 : 1',sport:'כדורגל'},
+{date:'2026-09-15',time:'22:30',league:'הליגה הספרדית',home:'אלצ׳ה',away:'ריאל מדריד',hi:'🟢',ai:'⚪',state:'הסתיים',score:'2 : 3',sport:'כדורגל'},
+{date:'2026-09-12',time:'22:00',league:'הליגה הספרדית',home:'ריאל מדריד',away:'ראיו וייקאנו',hi:'⚪',ai:'🔴⚪',state:'הסתיים',score:'4 : 1',sport:'כדורגל'},
+{date:'2026-09-08',time:'22:00',league:'ליגת האלופות',home:'ריאל מדריד',away:'אינטר',hi:'⚪',ai:'🔵⚫',state:'הסתיים',score:'2 : 1',sport:'כדורגל'},
+{date:'2026-09-04',time:'22:00',league:'הליגה הספרדית',home:'ריאל בטיס',away:'ריאל מדריד',hi:'🟢⚪',ai:'⚪',state:'הסתיים',score:'1 : 0',sport:'כדורגל'},
+{date:'2026-09-14',time:'20:00',league:'ליגת העל בישראל',home:'עירוני קריית שמונה',away:'מכבי חיפה',hi:'🔵',ai:'🟢',state:'הסתיים',score:'0 : 4',sport:'כדורגל'},
+{date:'2026-09-05',time:'20:30',league:'ליגת העל בישראל',home:'מכבי חיפה',away:'הפועל פתח תקווה',hi:'🟢',ai:'🔵',state:'הסתיים',score:'2 : 1',sport:'כדורגל'},
+{date:'2026-08-31',time:'20:30',league:'ליגת העל בישראל',home:'מכבי תל אביב',away:'מכבי חיפה',hi:'🟡🔵',ai:'🟢',state:'הסתיים',score:'3 : 1',sport:'כדורגל'},
+{date:'2026-08-22',time:'20:30',league:'ליגת העל בישראל',home:'מכבי חיפה',away:'הפועל רמת גן',hi:'🟢',ai:'🔴',state:'הסתיים',score:'2 : 1',sport:'כדורגל'},
+{date:'2026-08-17',time:'20:00',league:'גביע הטוטו',home:'מכבי חיפה',away:'הפועל ירושלים',hi:'🟢',ai:'🔴⚫',state:'הסתיים',score:'0 : 1',sport:'כדורגל'}
+];
+const news=[
+['מכבי חיפה','כאן יופיעו חדשות מאומתות על מכבי חיפה, כולל פציעות, הרכבים והעברות.'],
+['ריאל מדריד','כאן יופיעו עדכונים על ריאל מדריד ועל חדשות דרמטיות בליגה הספרדית.'],
+['נבחרת ישראל','כאן יופיעו עדכוני סגל, משחקים וחדשות הנבחרת.'],
+['Essendon Bombers','כאן יופיעו חדשות AFL ועדכונים חשובים על אסנדון.']
+];
+let page='games',selected=null;
+const app=document.getElementById('app');
+function dateLabel(d){return new Date(d+'T12:00:00').toLocaleDateString('he-IL',{weekday:'long',day:'numeric',month:'long'})}
+function matchCard(m){return `<div class="match" onclick="openMatch('${m.home.replaceAll("'","")}','${m.away.replaceAll("'","")}')"><div class="matchtop"><span class="league"><span class="dot"></span>${m.league}</span><span>${m.state==='הסתיים'?'סיום':m.time}</span></div><div class="teams"><div class="team"><span class="crest">${m.hi}</span>${m.home}</div><div class="score">${m.score||'— : —'}<small>${m.state==='הסתיים'?'תוצאה סופית':m.state}</small></div><div class="team"><span class="crest">${m.ai}</span>${m.away}</div></div><div class="matchbottom"><span>📅 ${dateLabel(m.date)}</span><span>${m.state==='הסתיים'?'פרטי משחק ←':'פרטי משחק ←'}</span></div></div>`}
+function renderGames(){let sorted=[...matches].sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));let grouped={};sorted.forEach(m=>(grouped[m.date]??=[]).push(m));return `<div class="headline"><div><h2>כל המשחקים</h2><p>משחקים לפי תאריך ושעת פתיחה</p></div><select class="filter" onchange="filterSport(this.value)"><option value="all">כל הענפים</option><option>כדורגל</option><option>AFL</option></select></div><div id="matchlist">${Object.entries(grouped).map(([d,ms])=>`<div class="date-label">${dateLabel(d)}</div>${ms.map(matchCard).join('')}`).join('')}</div><div class="panel muted" style="font-size:12px;line-height:1.6">ℹ️ נוספו 10 משחקים קודמים עם תוצאות. המשחקים העתידיים והחדשות עדיין אינם מתעדכנים אוטומטית.</div>`}
+function renderTeams(){return `<div class="headline"><div><h2>הקבוצות שלי</h2><p>לחצו על קבוצה כדי לפתוח את העמוד שלה</p></div></div><div class="grid">${teams.map(t=>`<div class="club" onclick="openTeam('${t.id}')"><div class="crest">${t.icon}</div><b>${t.name}</b><small>${t.sport} · ${t.league}</small></div>`).join('')}</div>`}
+function renderNews(){return `<div class="headline"><div><h2>מרכז החדשות</h2><p>עדכונים לקבוצות שלך ולליגות שלהן</p></div></div><div class="panel"><span class="pill">עדכונים לפי חשיבות</span>${news.map(n=>`<div class="newsitem"><b>${n[0]}</b><p>${n[1]}</p></div>`).join('')}<p class="muted" style="font-size:12px">כדי להציג כתבות אמיתיות עם קישורים ותאריך פרסום, צריך לחבר מקור חדשות.</p></div>`}
+function renderTables(){return `<div class="headline"><div><h2>טבלאות ליגה</h2><p>בחירת ליגה ועונה</p></div></div><div class="panel"><label>קבוצה / ליגה </label><select class="filter" id="league" onchange="renderTableData()"><option value="haifa">ליגת העל בישראל</option><option value="real">הליגה הספרדית</option><option value="israel">נבחרות — לא קיימת טבלת ליגה רגילה</option><option value="essendon">AFL</option></select> <select class="filter" id="season" onchange="renderTableData()"><option>2026/27</option><option>2025/26</option><option>2024/25</option><option>2023/24</option></select><div id="tabledata" style="margin-top:15px"></div></div><p class="muted" style="font-size:12px">טבלת AFL לשנת 2026 מוצגת במלואה. טבלאות הכדורגל הן תמונת מצב ידנית, ולא עדכון אוטומטי.</p>`}
+function renderTableData(){
+  const id=document.getElementById('league')?.value;
+  const season=document.getElementById('season')?.value;
+  const box=document.getElementById('tabledata');
+  if(!box) return;
+  if(season!=='2026/27'){
+    box.innerHTML=`<p class="muted">אין כרגע נתונים מאומתים לעונת ${season} בתוך האפליקציה.</p><p><a href="${id==='real'?'https://www.laliga.com/en-US/laliga-easports/standing':'https://www.365scores.com/he/football/league/premier-league-42/matches'}" target="_blank" rel="noopener">פתיחת טבלה עדכנית באתר חיצוני ↗</a></p>`;
+    return;
+  }
+  if(id==='israel'){
+    box.innerHTML=`<p class="muted">לנבחרת ישראל אין טבלת ליגה קבועה כמו לקבוצות.</p><a href="https://www.uefa.com/uefanationsleague/" target="_blank" rel="noopener">טבלאות ליגת האומות ↗</a>`;
+    return;
+  }
+  if(id==='essendon'){
+    const aflRows=[
+      ['Fremantle',23,19,0,4,76,'137.2'],['Sydney',23,18,0,5,72,'136.1'],
+      ['Brisbane Lions',23,16,0,7,64,'121.7'],['Hawthorn',23,15,2,6,64,'120.1'],
+      ['Geelong',23,15,0,8,60,'122.3'],['Adelaide',23,15,0,8,60,'117.3'],
+      ['Melbourne',23,15,0,8,60,'109.6'],['Western Bulldogs',23,13,1,9,54,'95.4'],
+      ['Collingwood',23,12,2,9,52,'102.4'],['Carlton',23,12,1,10,50,'101.5'],
+      ['St Kilda',23,10,0,13,40,'102.8'],['Greater Western Sydney',23,10,0,13,40,'98.9'],
+      ['Gold Coast',23,9,0,14,36,'94.5'],['North Melbourne',23,9,0,14,36,'88.8'],
+      ['Port Adelaide',23,7,0,16,28,'88.1'],['West Coast',23,4,0,19,16,'69.2'],
+      ['Richmond',23,3,0,20,12,'62.5'],['Essendon',23,2,0,21,8,'64.6']
+    ];
+    box.innerHTML=`<p class="muted">טבלת העונה הסדירה של AFL לשנת 2026 · אחרי 23 משחקים לכל קבוצה</p>
+    <div style="overflow-x:auto"><table><thead><tr><th>#</th><th>קבוצה</th><th>מש׳</th><th>נצ׳</th><th>תיקו</th><th>הפ׳</th><th>נק׳</th><th>%</th></tr></thead>
+    <tbody>${aflRows.map((r,i)=>`<tr class="${r[0]==='Essendon'?'mine':''}"><td>${i+1}</td><td style="text-align:right;white-space:nowrap">${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td>${r[4]}</td><td><b>${r[5]}</b></td><td>${r[6]}</td></tr>`).join('')}</tbody></table></div>
+    <p class="muted" style="font-size:11px;margin-top:10px">אסנדון סיימה במקום 18 עם 8 נקודות. זו טבלת העונה הסדירה, לא טבלת הפלייאוף.</p>
+    <p><a href="https://www.afl.com.au/ladder" target="_blank" rel="noopener">בדיקת הטבלה באתר AFL הרשמי ↗</a> · <a href="https://afltables.com/afl/seas/2026.html" target="_blank" rel="noopener">מקור סטטיסטי לעונת 2026 ↗</a></p>`;
+    return;
+  }
+  const israelRows=[
+    ['מכבי תל אביב',6,5,1,0,'18–6',16],['הפועל תל אביב',6,4,1,1,'14–5',13],
+    ['הפועל באר שבע',6,4,1,1,'10–7',13],['מכבי חיפה',5,4,0,1,'12–7',12],
+    ['הפועל חיפה',6,2,3,1,'9–7',9],['בית"ר ירושלים',5,3,0,2,'7–9',9],
+    ['הפועל ירושלים',5,2,1,2,'12–12',7],['מכבי נתניה',6,1,3,2,'7–7',6],
+    ['מכבי פתח תקווה',6,2,0,4,'9–13',6],['בני סכנין',6,1,2,3,'3–6',5],
+    ['הפועל פתח תקווה',6,1,1,4,'3–9',4],['הפועל רמת גן',5,1,0,4,'4–9',3],
+    ['עירוני קריית שמונה',6,1,0,5,'6–14',3],['עירוני טבריה',6,2,1,3,'7–10',1]
+  ];
+  const laLigaRows=[
+    ['ברצלונה',8,8,0,0,'34–7',24],['אתלטיקו מדריד',8,6,1,1,'18–8',19],
+    ['ריאל בטיס',8,6,1,1,'12–7',19],['ריאל מדריד',8,6,0,2,'19–8',18],
+    ['סביליה',7,4,1,2,'10–9',13],['ריאל סוסיאדד',8,4,1,3,'12–15',13],
+    ['אלאבס',8,3,2,3,'12–8',11],['דפורטיבו לה קורוניה',8,2,4,2,'12–11',10],
+    ['סלטה ויגו',8,1,5,2,'8–6',8],['אתלטיק בילבאו',6,2,2,2,'7–6',8],
+    ['ויאריאל',8,2,2,4,'13–13',8],['אספניול',8,2,2,4,'11–11',8],
+    ['ראיו וייקאנו',7,2,2,3,'11–16',8],['חטאפה',8,2,2,4,'4–10',8],
+    ['אוססונה',8,2,2,4,'6–16',8],['ראסינג סנטנדר',7,2,1,4,'11–21',7],
+    ['אלצ׳ה',8,1,3,4,'11–17',6],['לבאנטה',6,1,2,3,'8–12',5],
+    ['ולנסיה',7,1,1,5,'4–13',4],['מלאגה',8,0,4,4,'4–13',4]
+  ];
+  const rows=id==='real'?laLigaRows:israelRows;
+  const club=id==='real'?'ריאל מדריד':'מכבי חיפה';
+  box.innerHTML=`<p class="muted">טבלת ${id==='real'?'הליגה הספרדית':'ליגת העל בישראל'} · עונת 2026/27</p>
+  <div style="overflow-x:auto"><table><thead><tr><th>#</th><th>קבוצה</th><th>מש׳</th><th>נצ׳</th><th>תיקו</th><th>הפ׳</th><th>שערים</th><th>נק׳</th></tr></thead>
+  <tbody>${rows.map((r,i)=>`<tr class="${r[0]===club?'mine':''}"><td>${i+1}</td><td style="text-align:right;white-space:nowrap">${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td>${r[4]}</td><td>${r[5]}</td><td><b>${r[6]}</b></td></tr>`).join('')}</tbody></table></div>
+  <p class="muted" style="font-size:11px;margin-top:10px">הנתונים מעודכנים ידנית לפי טבלאות שפורסמו ב־11.10.2026, ולכן ייתכן שינוי אחרי משחקים נוספים.</p>
+  <p><a href="${id==='real'?'https://www.laliga.com/en-US/laliga-easports/standing':'https://www.365scores.com/he/football/league/premier-league-42/matches'}" target="_blank" rel="noopener">בדיקת הטבלה העדכנית באתר ↗</a></p>`;
+}
+function openTeam(id){selected=teams.find(t=>t.id===id);page='team';render();document.getElementById('nav').querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.page==='teams'))}
+function openMatch(h,a){selected={home:h,away:a};page='match';render()}
+function renderDetail(){if(page==='team'){let t=selected;let ms=matches.filter(m=>m.home===t.name||m.away===t.name);return `<button class="back" onclick="go('teams')">→ חזרה לקבוצות</button><div class="panel"><div class="crest">${t.icon}</div><h2>${t.name}</h2><span class="pill">${t.sport} · ${t.league}</span><h3>משחקים</h3>${ms.length?ms.map(matchCard).join(''):'<p class="muted">לא נמצאו משחקים לדוגמה לקבוצה זו.</p>'}<h3 style="margin-top:22px">סגל שחקנים</h3>${t.players.map(p=>`<div class="newsitem">${p}</div>`).join('')}<h3 style="margin-top:22px">טבלת ליגה</h3><p class="muted">טבלה מלאה ועונות קודמות יופיעו לאחר חיבור מקור נתונים.</p><button class="filter" onclick="go('tables')">פתיחת טבלאות</button></div>`}return `<button class="back" onclick="go('games')">→ חזרה למשחקים</button><div class="panel"><span class="pill">פרטי משחק</span><h2>${selected.home} נגד ${selected.away}</h2><p class="muted">פרטי המשחק, אירועים והרכבים יוצגו כאן כאשר יהיו זמינים ממקור נתונים.</p><a href="https://www.liveball.co.il/" target="_blank" rel="noopener">פתיחת אתר Liveball ↗</a><p class="muted" style="font-size:12px">הקישור פותח את האתר הכללי, ולא מבטיח שידור של המשחק המסוים.</p></div>`}
+function render(){if(page==='games')app.innerHTML=renderGames();else if(page==='teams')app.innerHTML=renderTeams();else if(page==='news')app.innerHTML=renderNews();else if(page==='tables'){app.innerHTML=renderTables();renderTableData()}else app.innerHTML=renderDetail()}
+function go(p){page=p;selected=null;document.getElementById('nav').querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.page===p));render();window.scrollTo(0,0)}
+function filterSport(s){document.querySelectorAll('#matchlist .match').forEach((el,i)=>{let m=[...matches].sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));el.style.display=s==='all'||m[i]?.sport===s?'':'none'})}
+document.getElementById('nav').addEventListener('click',e=>{let b=e.target.closest('button[data-page]');if(b)go(b.dataset.page)});
+render();
+</script></body></html>
